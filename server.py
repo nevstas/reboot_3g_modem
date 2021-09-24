@@ -5,6 +5,7 @@ import os
 import time
 
 secret_key = "secreturl"
+server_port = 8080
 
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
@@ -27,15 +28,16 @@ class S(BaseHTTPRequestHandler):
 
 			if find_secret != secret_key:
 				self.wfile.write("Wrong secret key".encode('utf-8'))
+				return
 
 			if reboot_modem(find_modem_ip):
-				self.wfile.write("Modem " + find_modem_ip + " has been rebooted".encode('utf-8'))
+				self.wfile.write(("Modem " + find_modem_ip + " has been rebooted").encode('utf-8'))
 			else:
 				self.wfile.write("Modem reboot error".encode('utf-8'))
 		else:
 			self.wfile.write("Wrong request".encode('utf-8'))
 
-def run(server_class=HTTPServer, handler_class=S, port=8080):
+def run(server_class=HTTPServer, handler_class=S, port=server_port):
 	server_address = ('', port)
 	httpd = server_class(server_address, handler_class)
 	print('Starting httpd...\n')
