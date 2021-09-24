@@ -23,3 +23,5 @@ http://127.0.0.1:8080/secreturl/192.168.1.1/
 "secreturl" - это секретный ключ, который вы указали в переменной "secret_key",
 
 "192.168.1.1" - это ip модема, который перезагружаем
+
+Скрипт подходит для мобильных прокси, настроенных по этой инструкции [https://nevep.ru/26-mobilnye-proksi-svoimi-rukami](https://nevep.ru/26-mobilnye-proksi-svoimi-rukami) 
