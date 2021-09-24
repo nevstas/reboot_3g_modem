@@ -24,4 +24,6 @@ http://127.0.0.1:8080/secreturl/192.168.1.1/
 
 "192.168.1.1" - это ip модема, который перезагружаем
 
-Скрипт подходит для мобильных прокси, настроенных по этой инструкции [https://nevep.ru/26-mobilnye-proksi-svoimi-rukami](https://nevep.ru/26-mobilnye-proksi-svoimi-rukami) 
+Скрипт подходит для мобильных прокси, настроенных по этой инструкции [https://nevep.ru/26-mobilnye-proksi-svoimi-rukami](https://nevep.ru/26-mobilnye-proksi-svoimi-rukami)
+
+Также возмжна удаленная перезагружка модемов, для этого нужно настроить port forwarding для вашего роутера
