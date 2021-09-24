@@ -18,8 +18,6 @@ class S(BaseHTTPRequestHandler):
 	def do_GET(self):
 		self._set_response()
 		request_path = str(self.path)
-		print(request_path)
-		# return
 
 		m = re.search('\/([^\/]+)\/([^\/]+)\/', request_path)
 		if m:
