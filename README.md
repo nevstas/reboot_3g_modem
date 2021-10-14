@@ -27,3 +27,5 @@ http://127.0.0.1:8080/secreturl/192.168.1.1/
 Скрипт подходит для мобильных прокси, настроенных по этой инструкции [https://nevep.ru/26-mobilnye-proksi-svoimi-rukami](https://nevep.ru/26-mobilnye-proksi-svoimi-rukami)
 
 Также возмжна удаленная перезагрузка модемов, для этого нужно настроить port forwarding для вашего роутера
+
+Для добавления скрипта в автозагрузку скопируйте файл "autorun.cmd" в папку "c:\Documents and Settings\All Users\Start Menu\Programs\Startup\"
