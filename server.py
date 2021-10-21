@@ -3,11 +3,17 @@ import json
 import requests
 import os
 import time
+import socket
 
 secret_key = "secreturl"
 server_port = 8080
+mode = "ipv4" #ipv4 or ipv6
 
 from http.server import BaseHTTPRequestHandler, HTTPServer
+
+class HTTPServerV6(HTTPServer):
+	if mode == "ipv6":
+		address_family = socket.AF_INET6
 
 class S(BaseHTTPRequestHandler):
 	def _set_response(self):
@@ -35,8 +41,11 @@ class S(BaseHTTPRequestHandler):
 		else:
 			self.wfile.write("Wrong request".encode('utf-8'))
 
-def run(server_class=HTTPServer, handler_class=S, port=server_port):
-	server_address = ('', port)
+def run(server_class=HTTPServerV6, handler_class=S, port=server_port):
+	server = ""
+	if mode == "ipv6":
+		server = "::"
+	server_address = (server, port)
 	httpd = server_class(server_address, handler_class)
 	print('Starting httpd...\n')
 	try:
